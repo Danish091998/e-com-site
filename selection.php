@@ -25,9 +25,21 @@
         <!--        Top Bar-->
         <?php include('includes/top-bar.php')?>
         <!--        End of Top Bar-->
-            <img src="images/tshirt1.png" style="width:400px; margin: 150px 50px 0px 300px;">     
-            <img src="images/tshirt2.png" style="width:400px; margin: 150px 200px 0px 50px;">     
-
+        <div class="top-margin">
+            <div class="wrapper">
+                <h1 class="heading">Get Your Shirts Customized :</h1><div class="heading-line" id="headingUnderline"></div><hr class="hr-underline">
+            </div>
+        </div>
+        <div class="container">
+        <div class="row">
+            <div id="tsw1" class="col-md-6 tshirt-wrap">
+                <a href="customize.php"><img class="tshirt-pic" src="images/tshirt1.png"></a>
+            </div>
+            <div id="tsw2" class="col-md-6 tshirt-wrap">
+                <a href="#dead"><img class="tshirt-pic" src="images/tshirt2.png"></a>  
+            </div>
+        </div>
+        </div>
     </body>
         <!--        Bootstrap Scripts -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

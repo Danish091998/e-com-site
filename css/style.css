@@ -9,6 +9,10 @@ html,body{
     padding: 0;
 }
 
+.row{
+    margin: 0;
+}
+
 /*Top Bar*/
 
 .navbar {
@@ -85,14 +89,31 @@ html,body{
 
 #headingUnderline{
     border-top: 4px solid #ff6600;
-    width: 40px;
-    margin: -15px auto 15px;
+    width: 50px;
+    margin: -14px auto 15px;
 }
 .hr-underline{
-    margin-top: -17px;
-    width: 100px;
+    margin-top: -18px;
+    width: 130px;
     border-top:1.5px solid rgba(0,0,0,.2)
 }
 
 /*Customize Page*/
 
+/*Selection Page*/
+
+.tshirt-wrap{
+    margin: 0;
+    padding: 0;
+}
+
+.tshirt-pic{height: 70%;
+    margin: 0px 60px;
+    transition: all 0.3s ease;
+}
+
+.tshirt-pic:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)
+}
+
+#tsw1{text-align: right;}
