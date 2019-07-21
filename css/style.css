@@ -125,6 +125,11 @@ html,body{
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
+[type=radio]:checked + p {
+    background: #ff6600;
+    color:white;
+}
+
 .sub-heading{
     margin: 0;
     padding: 0;
@@ -156,6 +161,24 @@ html,body{
 
 small{
     font-weight: 500;
+}
+
+.form-button{
+    padding: 5px 10px;
+    font-size: 15px;
+    letter-spacing: 0.03em;
+    font-weight: 600;
+    border: 1.5px solid #ff6600;
+    background: white;
+    color: #ff6600;
+    transition: 0.3s all ease;
+    margin: 0 5px;
+    cursor: pointer;    
+}
+
+.form-button:hover{
+    color: white;
+    background: #ff6600;
 }
 
 .form-checkout-button{

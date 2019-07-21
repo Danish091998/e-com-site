@@ -39,5 +39,12 @@ $("#dryTshirt").click( function(){
    $("#color3").hide();
     $("#color2").show();
      $("#color1").show();
+});
 
+$("#fback").click(function(){
+   $("#optionalUpload").show(); 
+});
+
+$("#front, #back , #pocket").click(function(){
+   $("#optionalUpload").hide(); 
 });

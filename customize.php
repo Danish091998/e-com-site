@@ -112,24 +112,30 @@
                     <img class="form-tshirt-type" src="images/dry-fit.png">
                 </label>    
             </div>
-
-        
+                
             <div class="form-group">
-                <label class="form-label" for="shirtType">Select the type of shirt :</label><br>
-            
-                <label class="checkbox-inline"> 
-                    <input type="checkbox" name="printType" value="front">
-                    Front
+                <label class="form-label" for="printType">Select the part of tshirt where you want your design :</label><br>
+                
+                <label class="radio-inline"> 
+                    <input type="radio" name="printType" value="front" id="front" class="design-radio">
+                    <p class="form-button">Front</p>
+
                 </label>   
-                <label class="checkbox-inline"> 
-                    <input type="checkbox" name="printType" value="back">
-                    Back
+                <label class="radio-inline"> 
+                    <input type="radio" name="printType" value="back" id="back" class="design-radio">
+                    <p class="form-button">Back</p>
+
                 </label>    
-                <label class="checkbox-inline"> 
-                    <input type="checkbox" name="printType" value="pocekt">
-                    Pocket
-                </label>     
+                <label class="radio-inline"> 
+                    <input type="radio" name="printType" value="frontback" id="fback" class="design-radio">
+                    <p class="form-button">Front + Back</p>
+                </label>  
+                <label class="radio-inline"> 
+                    <input type="radio" name="printType" value="pocket" id="pocket" class="design-radio">
+                    <p class="form-button">Pocket</p>
+                </label>
             </div>
+                
             
 <!--
             <div class="form-group">
@@ -149,7 +155,7 @@
                 </div>
             </div>
                 
-            <div class="form-group">
+            <div class="form-group" id="optionalUpload" style="display:none;">
                 <div class="file-upload-opt">
                     <div class="file-select">
                         <div class="file-select-button" id="fileNameOpt">Choose File</div>
@@ -157,7 +163,7 @@
                         <input type="file" name="chooseFileOpt" id="chooseFileOpt" name="designOpt" accept="image/*">
                     </div>
                 </div>
-                <small>This is an optional field you can leave it empty.</small>
+                <small>Please upload design image for back of tshirt .</small>
             </div>
 
             <div class="form-group">
