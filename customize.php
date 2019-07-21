@@ -2,6 +2,21 @@
 
     include('includes/connection.php');
 
+    // fetching T - shirt type
+
+    $tShirtQuery = "SELECT DISTINCT  `SHIRTTYPE`  FROM `customs`";
+    $tShirtQueryResult = mysqli_query($conn, $tShirtQuery);
+    
+    while($result = mysqli_fetch_array($tShirtQueryResult)){
+        $name = $result['SHIRTTYPE'];
+    }
+
+
+
+
+
+
+
     if(isset($_POST['submit-form'])){
 
         function validateFormData( $formData ) {
