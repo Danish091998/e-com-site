@@ -81,39 +81,41 @@
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body>
+    <body class="top-margin">
         <!--        Top Bar-->
         <?php include('includes/top-bar.php')?>
         <!--        End of Top Bar-->
         
-        <div class="container top-margin">
-            <!--            ADD YOUR CODE HERE-->
-        </div> 
-
-        <form class="container container-fluid" action="<?php echo htmlspecialchars( $_SERVER['PHP_SELF'] ); ?>" method="post" enctype="multipart/form-data" > 
+        <div class="wrapper">
+            <h1 class="heading">Customization</h1><div class="heading-line" id="headingUnderline"></div><hr class="hr-underline">
+            <p class="sub-heading"> Please provide us some details for the customization of your clothes, by filling the form below :</p>
+        </div>
+        
+        <div class="container">
+            <form action="<?php echo htmlspecialchars( $_SERVER['PHP_SELF'] ); ?>" method="post" enctype="multipart/form-data"> 
 
             <?php echo $error; ?>
             
             <div class="form-group">
-                <label for="shirtType">Select the type of shirt:</label><br>
+                <label class="form-label" for="shirtType">Select the type of tshirt :</label><br>
                 
-                   <label class="radio-inline"> 
-                        <input type="radio" name="tShirtType" value="tshirt">
-                        <img src="http://placehold.it/100x100/0bf/fff&text=A">
-                    </label>   
-                    <label class="radio-inline"> 
-                        <input type="radio" name="tShirtType" value="polo">
-                        <img src="http://placehold.it/100x100/0bf/fff&text=B">
-                    </label>    
-                    <label class="radio-inline"> 
-                        <input type="radio" name="tShirtType" value="dryfit">
-                        <img src="http://placehold.it/100x100/0bf/fff&text=C">
-                    </label>    
+                <label class="radio-inline"> 
+                    <input type="radio" name="tShirtType" value="tshirt" id="poloTshirt">
+                    <img class="form-tshirt-type" src="images/polo-shirt.png">
+                </label>   
+                <label class="radio-inline"> 
+                    <input type="radio" name="tShirtType" value="polo" id="roundTshirt">
+                    <img class="form-tshirt-type" src="images/round-shirt.png">
+                </label>    
+                <label class="radio-inline"> 
+                    <input type="radio" name="tShirtType" value="dryfit" id="dryTshirt">
+                    <img class="form-tshirt-type" src="images/dry-fit.png">
+                </label>    
             </div>
 
         
             <div class="form-group">
-                <label for="shirtType">Select the type of shirt:</label><br>
+                <label class="form-label" for="shirtType">Select the type of shirt :</label><br>
             
                 <label class="checkbox-inline"> 
                     <input type="checkbox" name="printType" value="front">
@@ -129,41 +131,60 @@
                 </label>     
             </div>
             
+<!--
             <div class="form-group">
-            <label for="design">Upload the photo of your design</label><br>
+                <label class="form-label" for="design">Upload the photo of your design :</label><br>
                 <input type="file" name="design" accept="image/*">
             </div>
-
-            <div class="form-group">
-                <label for="colour">Select the colour of shirt:</label><br>
+-->
                 
-                   <label class="radio-inline"> 
-                        <input type="radio" name="colour" value="white">
-                        <img src="http://placehold.it/100x100/0bf/fff&text=A">
-                    </label>   
-                    <label class="radio-inline"> 
+            <div class="form-group">
+                <label class="form-label" for="design">Upload the photo of your design :</label><br>
+                <div class="file-upload">
+                    <div class="file-select">
+                        <div class="file-select-button" id="fileName">Choose File</div>
+                        <div class="file-select-name" id="noFile">No file chosen...</div> 
+                        <input type="file" name="chooseFile" id="chooseFile" name="design" accept="image/*">
+                    </div>
+                </div>
+            </div>
+                
+            <div class="form-group">
+                <div class="file-upload-opt">
+                    <div class="file-select">
+                        <div class="file-select-button" id="fileNameOpt">Choose File</div>
+                        <div class="file-select-name" id="noFileOpt">No file chosen...</div> 
+                        <input type="file" name="chooseFileOpt" id="chooseFileOpt" name="designOpt" accept="image/*">
+                    </div>
+                </div>
+                <small>This is an optional field you can leave it empty.</small>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="colour">Select the colour of tshirt :</label><br>
+                
+                   <label class="radio-inline" id="color1"> 
                         <input type="radio" name="colour" value="black">
-                        <img src="http://placehold.it/100x100/0bf/fff&text=B">
+                        <img class="form-tshirt-color" src="images/tshirt-colors/color1.png">
+                    </label>   
+                    <label class="radio-inline" id="color2"> 
+                        <input type="radio" name="colour" value="white">
+                        <img class="form-tshirt-color" src="images/tshirt-colors/color2.png">
                     </label>    
-                    <label class="radio-inline"> 
-                        <input type="radio" name="colour" value="green">
-                        <img src="http://placehold.it/100x100/0bf/fff&text=C">
+                    <label class="radio-inline" id="color3"> 
+                        <input type="radio" name="colour" value="blue">
+                        <img class="form-tshirt-color" src="images/tshirt-colors/color3.png">
                     </label>    
             </div>
 
             <div class="form-group">
-                <label for="quantity">Quantity</label>
-                <input type="number" class="form-control" id="quantity" placeholder="how many pieces do you want?">
+                <label class="form-label" for="contact">Contact Number :</label>
+                <input type="tel" class="form-control form-contact" id="contact" placeholder="contact number">
             </div>
-
-            <div class="form-group">
-                <label for="contact">Contact Number</label>
-                <input type="tel" class="form-control" id="contact" placeholder="contact number">
-            </div>
-
-            <button type="submit" class="btn btn-primary" name="submit-form">Submit</button>
+                <br>
+            <div style="text-align:center;"><button type="submit" class="form-checkout-button" name="submit-form">Proceed to checkout</button></div>
         </form>   
-
+            </div> 
     </body>
         <!--        Bootstrap Scripts -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

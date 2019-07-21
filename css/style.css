@@ -13,6 +13,11 @@ html,body{
     margin: 0;
 }
 
+.container{
+    padding: 40px 40px;
+    background: #f7f7f7;
+}
+
 /*Top Bar*/
 
 .navbar {
@@ -75,7 +80,8 @@ html,body{
 }
 
 .wrapper{
-    padding: 30px 0;    
+    padding: 20px 0;  
+    text-align: center;
 }
 
 .heading{
@@ -100,6 +106,106 @@ html,body{
 
 /*Customize Page*/
 
+/* HIDE RADIO */
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+    outline: 3px solid #555;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.sub-heading{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+}
+
+.form-label{
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+}
+
+.form-tshirt-type{
+    width: 200px;
+    margin: 0px 15px;
+}
+
+.form-tshirt-color{
+    width: 50px;
+    margin: 0 5px;
+    outline: 1px solid #999;
+}
+
+.form-contact{
+    width: 50%;
+}
+
+small{
+    font-weight: 500;
+}
+
+.form-checkout-button{
+    padding: 9px 16px;
+    font-size: 17px;
+    letter-spacing: 0.03em;
+    font-weight: 600;
+    border: 2px solid #ff6600;
+    background: white;
+    color: #ff6600;
+    transition: 0.3s all ease;
+}
+
+.form-checkout-button:hover{
+    background: #ff6600;
+    color: white;
+}
+
+/*Image Upload*/
+
+.file-upload{display:block;text-align:center;font-family: Helvetica, Arial, sans-serif;font-size: 12px; width: 50%;}
+.file-upload .file-select{display:block;border: 2px solid #dce4ec;color: #34495e;cursor:pointer;height:40px;line-height:40px;text-align:left;background:#FFFFFF;overflow:hidden;position:relative;}
+.file-upload .file-select .file-select-button{background:#dce4ec;padding:0 10px;display:inline-block;height:40px;line-height:40px;}
+.file-upload .file-select .file-select-name{line-height:40px;display:inline-block;padding:0 10px;}
+.file-upload .file-select:hover{border-color:#34495e;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload .file-select:hover .file-select-button{background:#34495e;color:#FFFFFF;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload.active .file-select{border-color:#3fa46a;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload.active .file-select .file-select-button{background:#3fa46a;color:#FFFFFF;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload .file-select input[type=file]{z-index:100;cursor:pointer;position:absolute;height:100%;width:100%;top:0;left:0;opacity:0;filter:alpha(opacity=0);}
+.file-upload .file-select.file-select-disabled{opacity:0.65;}
+.file-upload .file-select.file-select-disabled:hover{cursor:default;display:block;border: 2px solid #dce4ec;color: #34495e;cursor:pointer;height:40px;line-height:40px;margin-top:5px;text-align:left;background:#FFFFFF;overflow:hidden;position:relative;}
+.file-upload .file-select.file-select-disabled:hover .file-select-button{background:#dce4ec;color:#666666;padding:0 10px;display:inline-block;height:40px;line-height:40px;}
+.file-upload .file-select.file-select-disabled:hover .file-select-name{line-height:40px;display:inline-block;padding:0 10px;}
+
+/*Second Image Upload*/
+
+.file-upload-opt{display:block;text-align:center;font-family: Helvetica, Arial, sans-serif;font-size: 12px; width: 50%;}
+.file-upload-opt .file-select{display:block;border: 2px solid #dce4ec;color: #34495e;cursor:pointer;height:40px;line-height:40px;text-align:left;background:#FFFFFF;overflow:hidden;position:relative;}
+.file-upload-opt .file-select .file-select-button{background:#dce4ec;padding:0 10px;display:inline-block;height:40px;line-height:40px;}
+.file-upload-opt .file-select .file-select-name{line-height:40px;display:inline-block;padding:0 10px;}
+.file-upload-opt .file-select:hover{border-color:#34495e;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload-opt .file-select:hover .file-select-button{background:#34495e;color:#FFFFFF;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload-opt.active .file-select{border-color:#3fa46a;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload-opt.active .file-select .file-select-button{background:#3fa46a;color:#FFFFFF;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload-opt .file-select input[type=file]{z-index:100;cursor:pointer;position:absolute;height:100%;width:100%;top:0;left:0;opacity:0;filter:alpha(opacity=0);}
+.file-upload-opt .file-select.file-select-disabled{opacity:0.65;}
+.file-upload-opt .file-select.file-select-disabled:hover{cursor:default;display:block;border: 2px solid #dce4ec;color: #34495e;cursor:pointer;height:40px;line-height:40px;margin-top:5px;text-align:left;background:#FFFFFF;overflow:hidden;position:relative;}
+.file-upload-opt .file-select.file-select-disabled:hover .file-select-button{background:#dce4ec;color:#666666;padding:0 10px;display:inline-block;height:40px;line-height:40px;}
+.file-upload-opt .file-select.file-select-disabled:hover .file-select-name{line-height:40px;display:inline-block;padding:0 10px;}
+
 /*Selection Page*/
 
 .tshirt-wrap{
@@ -107,7 +213,8 @@ html,body{
     padding: 0;
 }
 
-.tshirt-pic{height: 70%;
+.tshirt-pic{
+    height: 70%;
     margin: 0px 60px;
     transition: all 0.3s ease;
 }
