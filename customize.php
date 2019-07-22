@@ -12,15 +12,25 @@
         $img  = $result['IMG'];
 
        $shirtData  .=  "<label class='radio-inline'> 
-                        <input type='radio' name='tShirtType' value='tshirt' data-type='$name' class='shirtType'>
+                        <input type='radio' name='tShirtType' value='tshirt' data-type='$name' class='shirt-type'>
                         <img class='form-tshirt-type' src=images/".$img.">
                         </label>";
     }
-
-
-
-
-
+    
+    $designQuery = "SELECT DISTINCT DESIGNPOS FROM printtype";
+    $designQueryResult = mysqli_query($conn, $designQuery);
+    $id = 1;
+    while($result = mysqli_fetch_array($designQueryResult)){
+        $tshirtType = $result['SHIRTTYPE'];
+        $design    = $result['DESIGNPOS'];
+        echo $design;
+        echo $tshirtType;
+        $designData  .= "<label class='radio-inline'> 
+                    <input type='radio' name='printType' id ='$id' value='design' class='design-radio' data-type='$tshirtType'>
+                    <p class='form-button'>$design</p>
+                    </label> ";
+        $id++;
+    }
 
 
     if(isset($_POST['submit-form'])){
@@ -119,27 +129,17 @@
             
             <div class="form-group">
                 <label class="form-label" for="shirtType">Select the type of tshirt :</label><br>
-                
-                <!-- <label class="radio-inline"> 
-                    <input type="radio" name="tShirtType" value="tshirt" id="poloTshirt">
-                    <img class="form-tshirt-type" src="images/polo-shirt.png">
-                </label>   
-                <label class="radio-inline"> 
-                    <input type="radio" name="tShirtType" value="polo" id="roundTshirt">
-                    <img class="form-tshirt-type" src="images/round-shirt.png">
-                </label>    
-                <label class="radio-inline"> 
-                    <input type="radio" name="tShirtType" value="dryfit" id="dryTshirt">
-                    <img class="form-tshirt-type" src="images/dry-fit.png">
-                </label>     -->
                 <?php
                     echo $shirtData;
                 ?>
             </div>
                 
+                 <div class="form-group colors"></div>
+                
             <div class="form-group">
                 <label class="form-label" for="printType">Select the part of tshirt where you want your design :</label><br>
-                
+                <?php echo $designData; ?>
+<!--
                 <label class="radio-inline"> 
                     <input type="radio" name="printType" value="front" id="front" class="design-radio">
                     <p class="form-button">Front</p>
@@ -158,6 +158,7 @@
                     <input type="radio" name="printType" value="pocket" id="pocket" class="design-radio">
                     <p class="form-button">Pocket</p>
                 </label>
+-->
             </div>
                 
             
@@ -190,22 +191,6 @@
                 <small>Please upload design image for back of tshirt .</small>
             </div>
 
-            <div class="form-group colors">
-                
-                   <label class="radio-inline" id="color1"> 
-                        <input type="radio" name="colour" value="black">
-                        <img class="form-tshirt-color" src="images/tshirt-colors/color1.png">
-                    </label>   
-                    <label class="radio-inline" id="color2"> 
-                        <input type="radio" name="colour" value="white">
-                        <img class="form-tshirt-color" src="images/tshirt-colors/color2.png">
-                    </label>    
-                    <label class="radio-inline" id="color3"> 
-                        <input type="radio" name="colour" value="blue">
-                        <img class="form-tshirt-color" src="images/tshirt-colors/color3.png">
-                    </label>    
-            </div>
-
             <div class="form-group">
                 <label class="form-label" for="contact">Contact Number :</label>
                 <input type="tel" class="form-control form-contact" id="contact" placeholder="contact number">
@@ -221,22 +206,4 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/customize.js"></script>
-        <script>
-            $(".shirtType").click(function(){
-                var type  = $(this).attr("data-type");
-
-                $.ajax({
-                    type : "POST",
-                    url  : "functions.php",
-                    data : "check=color&type="+ type,
-                    
-                    success:function(result){
-                        console.log(result);
-                        $(".colors").html("<label class='form-label' for='colour'>Select the colour of tshirt :</label><br>"+result);
-                        
-                    }
-                })
-            });
-        
-        </script>
 </html>

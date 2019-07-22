@@ -130,6 +130,11 @@ html,body{
     color:white;
 }
 
+[type=radio]:checked + div {
+    border: 2px solid #333;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
 .sub-heading{
     margin: 0;
     padding: 0;
@@ -149,10 +154,12 @@ html,body{
     margin: 0px 15px;
 }
 
-.form-tshirt-color{
+.form-color-circle{
     width: 50px;
+    height: 50px;
     margin: 0 5px;
-    outline: 1px solid #999;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 .form-contact{

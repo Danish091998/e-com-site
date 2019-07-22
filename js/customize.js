@@ -22,29 +22,24 @@ $('#chooseFileOpt').bind('change', function () {
   }
 });
 
+        $(".shirt-type").click(function(){
+                var type  = $(this).attr("data-type");
 
-$("#poloTshirt").click( function(){
-   $("#color1").hide();
-     $("#color2").show();
-     $("#color3").show();
-});
+                $.ajax({
+                    type : "POST",
+                    url  : "functions.php",
+                    data : "check=color&type="+ type,
+                    
+                    success:function(result){
+                        $(".colors").html("<label class='form-label' for='colour'>Select the colour of tshirt :</label><br>" + result); 
+                                            }
+                        })
+                                        });
 
-$("#roundTshirt").click( function(){
-   $("#color2").show();
-    $("#color1").show();
-    $("#color3").show();
-});
-
-$("#dryTshirt").click( function(){
-   $("#color3").hide();
-    $("#color2").show();
-     $("#color1").show();
-});
-
-$("#fback").click(function(){
+$("#3").click(function(){
    $("#optionalUpload").show(); 
 });
 
-$("#front, #back , #pocket").click(function(){
+$("#1, #2 , #4").click(function(){
    $("#optionalUpload").hide(); 
 });

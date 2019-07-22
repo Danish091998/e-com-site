@@ -13,11 +13,12 @@ if($_POST['check'] == "color"){
         $name        = $result['SHIRTTYPE'];
         $colorimg    = $result['COLORIMG'];
         $quantity    = $result['QUANTITY'];
+        $color       = $result['COLORCODE'];  
 
         if($quantity>0){
             $colorAvail .= "<label class='radio-inline'> 
             <input type='radio' name='colour' value='black'>
-            <img class='form-tshirt-color' src=images/tshirt-colors/$colorimg>
+            <div class='form-color-circle' style='background:$color;'></div>
             </label>";
         }
     }
