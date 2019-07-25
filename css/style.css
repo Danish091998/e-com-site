@@ -59,7 +59,7 @@ html,body{
     margin: 0 20px;
     font-size: 13px;
     text-transform: uppercase;
-    color: black;
+    color: #222;
     font-weight: 600;
     letter-spacing: 0.03em;
 }
@@ -67,27 +67,33 @@ html,body{
 .login-button{
     line-height: 60px;
     font-size: 14px;
-    color: black;
+    color: #222;
     letter-spacing: 0.03em;
     font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease all;
+}
+
+.login-button:hover{
+    color: #ff6600;
+    text-decoration: none;
 }
 
 /*Home Page*/
 
-.carousel{
-    margin-top: 60px;
-    height: 90%;
+.wrapper-home{
+    padding: 40px 0 0;  
+    text-align: center;
 }
 
-.wrapper{
-    padding: 20px 0;  
-    text-align: center;
+.carousel{
+    margin-top: 60px;
 }
 
 .heading{
     font-size:35px;
     margin-bottom:20px;
-    color:black;
+    color:#222;
     text-align: center;
     letter-spacing: 0.05em;
     font-weight: 600;
@@ -104,7 +110,26 @@ html,body{
     border-top:1.5px solid rgba(0,0,0,.2)
 }
 
+.cart-logo{
+    font-size: 22px;
+    position: relative;
+    top:2px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: 0.3s ease all;
+    text-decoration: none;
+    color: #222;
+}
+
+.cart-logo:hover{
+    color: #ff6600;
+}
 /*Customize Page*/
+
+.wrapper{
+    padding: 20px 0;  
+    text-align: center;
+}
 
 /* HIDE RADIO */
 [type=radio] { 
@@ -202,6 +227,12 @@ small{
 .form-checkout-button:hover{
     background: #ff6600;
     color: white;
+}
+
+.cost{
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 /*Image Upload*/

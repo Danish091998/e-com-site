@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="css/fontello.css" type="text/css">
+
 <div class="navbar">
                     <div class="row top-bar-wrapper">
                 <div class="col-xs-2 col-wrapper">
@@ -9,7 +11,8 @@
                     <a class="navigation-links" href="#women">Women</a>
                 </div>
                 <div class="col=xs-4 col-wrapper">
-                    <a class="login-button" href="#login">Login</a>
+                    <a class="login-button" href="#login">Login</a> 
+                    <a href="#cart"><i class="icon-bag cart-logo"></i></a>
                 </div>
             </div>
         </div>

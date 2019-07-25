@@ -190,10 +190,10 @@
                 </div>
                 <small>Please upload design image for back of tshirt .</small>
             </div>
-
             <div class="form-group">
-                <label class="form-label" for="contact">Contact Number :</label>
-                <input type="tel" class="form-control form-contact" id="contact" placeholder="contact number">
+                <label class="form-label"> Total Amount: </label>
+                    <p class="cost">&#8377; 233.00</p>
+                    <small>Taxes and shipping charges are not included.</small>
             </div>
                 <br>
             <div style="text-align:center;"><button type="submit" class="form-checkout-button" name="submit-form">Proceed to checkout</button></div>
