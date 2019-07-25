@@ -17,13 +17,30 @@ if($_POST['check'] == "color"){
 
         if($quantity>0){
             $colorAvail .= "<label class='radio-inline'> 
-            <input type='radio' name='colour' value='black'>
-            <div class='form-color-circle' style='background:$color;'></div>
-            </label>";
+                            <input type='radio' name='colour' value='black'>
+                            <div class='form-color-circle' style='background:$color;'></div>
+                            </label>";
         }
     }
 
     echo $colorAvail;
 }
 
+if($_POST['check'] == "print"){
+
+    $typeShirt = $_POST["type"];
+    $designQuery = "SELECT `DESIGNPOS` FROM `printtype` WHERE SHIRTTYPE = '$typeShirt'";
+    $designQueryResult = mysqli_query($conn, $designQuery);
+
+    while($result = mysqli_fetch_array($designQueryResult)){
+
+        $print = $result['DESIGNPOS'];
+        $printAvail .= "<label class='radio-inline'> 
+                        <input type='radio' name='printType' value='design' class='design-radio'>
+                        <p class='form-button'>$print</p>
+                        </label>";
+        }
+
+        echo $printAvail;
+}
 ?>

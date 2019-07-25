@@ -17,20 +17,22 @@
                         </label>";
     }
     
-    $designQuery = "SELECT DISTINCT DESIGNPOS FROM printtype";
-    $designQueryResult = mysqli_query($conn, $designQuery);
-    $id = 1;
-    while($result = mysqli_fetch_array($designQueryResult)){
-        $tshirtType = $result['SHIRTTYPE'];
-        $design    = $result['DESIGNPOS'];
-        echo $design;
-        echo $tshirtType;
-        $designData  .= "<label class='radio-inline'> 
-                    <input type='radio' name='printType' id ='$id' value='design' class='design-radio' data-type='$tshirtType'>
-                    <p class='form-button'>$design</p>
-                    </label> ";
-        $id++;
-    }
+    // $designQuery = "SELECT `DESIGNPOS` FROM `printtype` WHERE ";
+    // $designQueryResult = mysqli_query($conn, $designQuery);
+    // $id = 1;
+    // while($result = mysqli_fetch_array($designQueryResult)){
+    //     $tshirtType = $result['SHIRTTYPE'];
+    //     $design    = $result['DESIGNPOS'];
+    //     echo $design;
+    //     echo $tshirtType;
+    //     $designData  .= "<label class='radio-inline'> 
+    //                 <input type='radio' name='printType' id ='$id' value='design' class='design-radio' data-type='$tshirtType'>
+    //                 <p class='form-button'>$design</p>
+    //                 </label> ";
+    //     $id++;
+    // }
+
+
 
 
     if(isset($_POST['submit-form'])){
@@ -136,9 +138,9 @@
                 
                  <div class="form-group colors"></div>
                 
-            <div class="form-group">
+            <div class="form-group print-type">
                 <label class="form-label" for="printType">Select the part of tshirt where you want your design :</label><br>
-                <?php echo $designData; ?>
+    
 <!--
                 <label class="radio-inline"> 
                     <input type="radio" name="printType" value="front" id="front" class="design-radio">

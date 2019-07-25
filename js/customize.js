@@ -34,6 +34,16 @@ $('#chooseFileOpt').bind('change', function () {
                         $(".colors").html("<label class='form-label' for='colour'>Select the colour of tshirt :</label><br>" + result); 
                                             }
                         })
+
+                        $.ajax({
+                          type : "POST",
+                          url  : "functions.php",
+                          data : "check=print&type="+ type,
+                          
+                          success:function(result){
+                              $(".print-type").html("<label class='form-label' for='printType'>Select the part of tshirt where you want your design :</label><br>" + result); 
+                                                  }
+                              })
                                         });
 
 $("#3").click(function(){
