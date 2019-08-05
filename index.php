@@ -1,3 +1,55 @@
+<?php 
+include('includes/connection.php');
+
+//fetching Trending Shirts
+$shirtQuery = "SELECT * FROM PRODUCTS";
+$shirtQueryResult = mysqli_query($conn, $shirtQuery);
+
+    if(mysqli_num_rows($shirtQueryResult) > 0){
+        $break = 1;
+        while( $row = mysqli_fetch_array($shirtQueryResult) ){
+            $pName  = $row["P_NAME"];
+            $pImage = $row["P_IMAGE"];
+            $pPrice = $row["P_PRICE"];
+            
+            if( $break % 4 == 1){
+            $products .= "<div class='row'><div class='col-sm-3'> <a href='#dead' class='card-anchor'><div class='card'>
+                    <img class='card-img-top' src='$pImage'>
+                    <div class='card-body'>
+                        <h5 class='card-title product-name'>$pName</h5>
+                        <p class='card-text product-price'>&#8377; <b>$pPrice</b></p>
+                    </div>
+                    </div></a>
+                </div>";
+            }
+            else if($break % 4 ==0){
+               $products .= "<div class='col-sm-3'><a href='#dead' class='card-anchor'><div class='card'>
+                    <img class='card-img-top' src='$pImage'>
+                    <div class='card-body'>
+                        <h5 class='card-title product-name'>$pName</h5>
+                        <p class='card-text product-price'>&#8377; <b>$pPrice</b></p>
+                    </div>
+                </div>
+                </a>
+                </div>
+                </div><br>"; 
+            }
+            else{
+                 $products .= "<div class='col-sm-3'><a href='#dead' class='card-anchor'><div class='card'>
+                    <img class='card-img-top' src='$pImage'>
+                    <div class='card-body'>
+                        <h5 class='card-title product-name'>$pName</h5>
+                        <p class='card-text product-price'>&#8377; <b>$pPrice</b></p>
+                    </div>
+                </div></a></div>";   
+            }
+            $break++;
+        }
+    }
+else{
+    $error = "<div class='alert alert-danger'>Wrong username / password combination. Try again.</div>";
+}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -59,30 +111,7 @@
             </div>
         
         <div class="container" style="background:white;">
-            
-            <div class="card-deck">
-                <div class="card">
-                    <img class="card-img-top" src="images/dry-fit.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="images/dry-fit.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="card-img-top" src="images/dry-fit.png" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    </div>
-                </div>
-            </div>
+                <?php echo $products;?>
             
         </div>
         

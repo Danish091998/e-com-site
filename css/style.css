@@ -62,6 +62,13 @@ html,body{
     color: #222;
     font-weight: 600;
     letter-spacing: 0.03em;
+    text-decoration: none;
+    transition: 0.2s ease all;
+}
+
+.navigation-links:hover{
+    color: #ff6600;
+    text-decoration: none;
 }
 
 .login-button{
@@ -71,12 +78,28 @@ html,body{
     letter-spacing: 0.03em;
     font-weight: 600;
     text-decoration: none;
-    transition: 0.3s ease all;
+    transition: 0.2s ease all;
 }
 
 .login-button:hover{
     color: #ff6600;
     text-decoration: none;
+}
+
+.cart-logo{
+    font-size: 22px;
+    position: relative;
+    top:2px;
+    cursor: pointer;
+    margin: 0 5px;
+    text-decoration: none;
+    color: #222;
+    transition: 0.2s ease all;
+
+}
+
+.cart-logo:hover{
+    color: #ff6600;
 }
 
 /*Home Page*/
@@ -110,20 +133,34 @@ html,body{
     border-top:1.5px solid rgba(0,0,0,.2)
 }
 
-.cart-logo{
-    font-size: 22px;
-    position: relative;
-    top:2px;
-    cursor: pointer;
-    margin: 0 5px;
-    transition: 0.3s ease all;
-    text-decoration: none;
-    color: #222;
+.card{
+    border: none;
+}   
+
+.card-body{
+    padding: 8px 0px;
 }
 
-.cart-logo:hover{
-    color: #ff6600;
+.card-anchor{
+    text-decoration: none;
 }
+
+.card-anchor:hover{
+    text-decoration: none;
+}
+
+.product-name{
+    font-size: 13px;
+    margin: 0px 0px 2px;
+    color: #444;
+}
+
+.product-price{
+    font-size: 14px;
+    margin: 0px;
+    color: black;
+}
+
 /*Customize Page*/
 
 .wrapper{

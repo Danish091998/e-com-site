@@ -17,24 +17,6 @@
                         </label>";
     }
     
-    // $designQuery = "SELECT `DESIGNPOS` FROM `printtype` WHERE ";
-    // $designQueryResult = mysqli_query($conn, $designQuery);
-    // $id = 1;
-    // while($result = mysqli_fetch_array($designQueryResult)){
-    //     $tshirtType = $result['SHIRTTYPE'];
-    //     $design    = $result['DESIGNPOS'];
-    //     echo $design;
-    //     echo $tshirtType;
-    //     $designData  .= "<label class='radio-inline'> 
-    //                 <input type='radio' name='printType' id ='$id' value='design' class='design-radio' data-type='$tshirtType'>
-    //                 <p class='form-button'>$design</p>
-    //                 </label> ";
-    //     $id++;
-    // }
-
-
-
-
     if(isset($_POST['submit-form'])){
 
         function validateFormData( $formData ) {
@@ -87,8 +69,6 @@
             $error .= "Please enter your contact number.";
         }
     }
-
-
 ?>
 
 <!DOCTYPE html>
@@ -137,39 +117,8 @@
             </div>
                 
                  <div class="form-group colors"></div>
-                
-            <div class="form-group print-type">
-                <label class="form-label" for="printType">Select the part of tshirt where you want your design :</label><br>
-    
-<!--
-                <label class="radio-inline"> 
-                    <input type="radio" name="printType" value="front" id="front" class="design-radio">
-                    <p class="form-button">Front</p>
-
-                </label>   
-                <label class="radio-inline"> 
-                    <input type="radio" name="printType" value="back" id="back" class="design-radio">
-                    <p class="form-button">Back</p>
-
-                </label>    
-                <label class="radio-inline"> 
-                    <input type="radio" name="printType" value="frontback" id="fback" class="design-radio">
-                    <p class="form-button">Front + Back</p>
-                </label>  
-                <label class="radio-inline"> 
-                    <input type="radio" name="printType" value="pocket" id="pocket" class="design-radio">
-                    <p class="form-button">Pocket</p>
-                </label>
--->
-            </div>
-                
-            
-<!--
-            <div class="form-group">
-                <label class="form-label" for="design">Upload the photo of your design :</label><br>
-                <input type="file" name="design" accept="image/*">
-            </div>
--->
+                    
+            <div class="form-group print-type"></div>
                 
             <div class="form-group">
                 <label class="form-label" for="design">Upload the photo of your design :</label><br>

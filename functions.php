@@ -31,12 +31,10 @@ if($_POST['check'] == "print"){
     $typeShirt = $_POST["type"];
     $designQuery = "SELECT `DESIGNPOS` FROM `printtype` WHERE SHIRTTYPE = '$typeShirt'";
     $designQueryResult = mysqli_query($conn, $designQuery);
-
     while($result = mysqli_fetch_array($designQueryResult)){
-
         $print = $result['DESIGNPOS'];
         $printAvail .= "<label class='radio-inline'> 
-                        <input type='radio' name='printType' value='design' class='design-radio'>
+                        <input type='radio' name='printType' id='$print' value='design'>
                         <p class='form-button'>$print</p>
                         </label>";
         }
