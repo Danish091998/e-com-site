@@ -1,5 +1,5 @@
 .top-margin{
-    margin-top: 60px;
+    margin-top: 90px;
 }
 
 html,body{
@@ -22,14 +22,22 @@ html,body{
 
 .navbar {
     overflow: hidden;
-    background-color: white;
-    position: fixed;
-    top: 0;
+    background-color: transparent;
+    position: absolute;
     width: 100%;
     padding: 0;
-    height: 60px;
-    border-bottom:1px solid rgba(0,0,0,.2);    
+    height: 80px;
     z-index: 10;
+    line-height: 80px;
+    top: 40px;
+/*    transition: 0.3s ease all;*/
+}
+
+.fixed{
+    position: fixed;
+    top:0;
+    background: white;
+    border-bottom:1px solid rgba(0,0,0,.2);   
 }
 
 .top-bar-wrapper{
@@ -38,7 +46,7 @@ html,body{
     height: 100%;
     width: 100%;    
 }
-
+    
 .col-wrapper{
     width: 25%;
     text-align: center;
@@ -50,20 +58,21 @@ html,body{
 }
 
 .logo{
-    font-size: 25px;
-    line-height: 60px;
-}
+    font-size: 35px;
+    line-height: 80px;
+    color: white;
+    margin: 0;
+}   
 
 .navigation-links{
-    line-height: 60px;
     margin: 0 20px;
     font-size: 13px;
     text-transform: uppercase;
-    color: #222;
+    color: white;
     font-weight: 600;
     letter-spacing: 0.03em;
     text-decoration: none;
-    transition: 0.2s ease all;
+    transition: 0.3s ease all;
 }
 
 .navigation-links:hover{
@@ -72,13 +81,13 @@ html,body{
 }
 
 .login-button{
-    line-height: 60px;
+    line-height: 80px;
     font-size: 14px;
-    color: #222;
+    color: white;
     letter-spacing: 0.03em;
     font-weight: 600;
     text-decoration: none;
-    transition: 0.2s ease all;
+    transition: 0.3s ease all;
 }
 
 .login-button:hover{
@@ -93,13 +102,21 @@ html,body{
     cursor: pointer;
     margin: 0 5px;
     text-decoration: none;
-    color: #222;
-    transition: 0.2s ease all;
-
+    color: white;
+    transition: 0.3s ease all;
 }
 
 .cart-logo:hover{
     color: #ff6600;
+}
+
+.color{
+    color: black;
+}
+
+.font-size{
+    font-size: 28px;
+    transition: 0.3s ease all;
 }
 
 /*Home Page*/
@@ -110,7 +127,7 @@ html,body{
 }
 
 .carousel{
-    margin-top: 60px;
+/*    margin-top: 60px;*/
 }
 
 .heading{
@@ -192,9 +209,14 @@ html,body{
     color:white;
 }
 
-[type=radio]:checked + div {
+[type=radio]:checked + .form-color-circle {
     border: 2px solid #333;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+[type=radio]:checked + .form-size-circle {
+    background: #ff6600;
+    color:white;
 }
 
 .sub-heading{
@@ -222,6 +244,29 @@ html,body{
     margin: 0 5px;
     border-radius: 50%;
     cursor: pointer;
+}
+
+.form-size-circle{
+    width: 35px;
+    height: 35px;
+    margin: 0px 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: white;
+    text-align: center;
+    line-height: 35px;
+    text-align: center;
+    border: 1.5px solid #ff6600;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ff6600;
+    box-sizing: content-box;
+}
+
+.form-size-circle:hover{
+    color: white;
+    background: #ff6600;
+    transition: 0.3s ease all;
 }
 
 .form-contact{
